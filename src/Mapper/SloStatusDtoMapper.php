@@ -17,7 +17,7 @@ use BlackCat\Database\Support\DtoHydrator;
 final class SloStatusDtoMapper
 {
     /** @var array<string,string> Column -> DTO property */
-    private const COL_TO_PROP = [ 'window_id' => 'windowId', 'computed_at' => 'computedAt', 'sli_value' => 'sliValue', 'good_events' => 'goodEvents', 'total_events' => 'totalEvents' ];
+    private const COL_TO_PROP = [ 'id' => 'id', 'window_id' => 'windowId', 'computed_at' => 'computedAt', 'sli_value' => 'sliValue', 'good_events' => 'goodEvents', 'total_events' => 'totalEvents', 'status' => 'status' ];
 
     /** @var string[] */
     private const BOOL_COLS   = [];
