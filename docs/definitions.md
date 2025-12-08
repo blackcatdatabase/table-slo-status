@@ -5,11 +5,11 @@ Computed status entries for service-level objectives.
 ## Columns
 | Column | Type | Null | Default | Description |
 | --- | --- | --- | --- | --- |
-| computed_at | TIMESTAMPTZ(6) | NO | CURRENT_TIMESTAMP(6) | Timestamp when the SLO was evaluated. |
+| computed_at | DATETIME(6) | NO | CURRENT_TIMESTAMP(6) | Timestamp when the SLO was evaluated. |
 | good_events | BIGINT | NO | 0 | Number of good events counted. |
 | id | BIGINT | NO |  | Surrogate primary key. |
-| sli_value | NUMERIC(18,6) | YES |  | Measured SLI value. |
-| status | TEXT | NO | unknown | Evaluation result. (enum: good, breach, unknown) |
+| sli_value | DECIMAL(18,6) | YES |  | Measured SLI value. |
+| status | ENUM('good','breach','unknown') | NO | unknown | Evaluation result. (enum: good, breach, unknown) |
 | total_events | BIGINT | NO | 0 | Total events observed. |
 | window_id | BIGINT | NO |  | SLO window (FK slo_windows.id). |
 
@@ -56,5 +56,5 @@ Foreign keys:
 ## Views
 | View | Engine | Flags | File |
 | --- | --- | --- | --- |
-| vw_slo_status | mysql | algorithm=MERGE, security=INVOKER | [packages\slo-status\schema\040_views.mysql.sql](https://github.com/blackcatacademy/blackcat-database/packages/slo-status/schema/040_views.mysql.sql) |
-| vw_slo_status | postgres |  | [packages\slo-status\schema\040_views.postgres.sql](https://github.com/blackcatacademy/blackcat-database/packages/slo-status/schema/040_views.postgres.sql) |
+| vw_slo_status | mysql | algorithm=MERGE, security=INVOKER | [schema\040_views.mysql.sql](schema\040_views.mysql.sql) |
+| vw_slo_status | postgres |  | [schema\040_views.postgres.sql](schema\040_views.postgres.sql) |
