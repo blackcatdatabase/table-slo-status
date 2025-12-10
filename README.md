@@ -96,9 +96,9 @@ graph LR
 _No engine differences detected._
 
 ## Constraints Snapshot
-- `status` – default=unknown, enum
-- `good_events` – default=0
 - `computed_at` – default=CURRENT_TIMESTAMP(6)
+- `good_events` – default=0
+- `status` – default=unknown, enum
 - `total_events` – default=0
 
 ## Schema Files
