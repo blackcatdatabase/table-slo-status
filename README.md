@@ -98,8 +98,8 @@ _No engine differences detected._
 ## Constraints Snapshot
 - `computed_at` – default=CURRENT_TIMESTAMP(6)
 - `good_events` – default=0
-- `status` – default=unknown, enum
 - `total_events` – default=0
+- `status` – default=unknown, enum
 
 ## Schema Files
 | File | Engine |
