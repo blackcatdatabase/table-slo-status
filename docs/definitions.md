@@ -5,13 +5,13 @@ Computed status entries for service-level objectives.
 ## Columns
 | Column | Type | Null | Default | Description |
 | --- | --- | --- | --- | --- |
-| computed_at | DATETIME(6) | NO | CURRENT_TIMESTAMP(6) | Timestamp when the SLO was evaluated. |
-| good_events | BIGINT | NO | 0 | Number of good events counted. |
 | id | BIGINT | NO |  | Surrogate primary key. |
-| sli_value | DECIMAL(18,6) | YES |  | Measured SLI value. |
-| status | ENUM('good','breach','unknown') | NO | unknown | Evaluation result. (enum: good, breach, unknown) |
-| total_events | BIGINT | NO | 0 | Total events observed. |
 | window_id | BIGINT | NO |  | SLO window (FK slo_windows.id). |
+| computed_at | mysql: DATETIME(6) / postgres: TIMESTAMPTZ(6) | NO | CURRENT_TIMESTAMP(6) | Timestamp when the SLO was evaluated. |
+| sli_value | mysql: DECIMAL(18,6) / postgres: NUMERIC(18,6) | YES |  | Measured SLI value. |
+| good_events | BIGINT | NO | 0 | Number of good events counted. |
+| total_events | BIGINT | NO | 0 | Total events observed. |
+| status | mysql: ENUM('good','breach','unknown') / postgres: TEXT | NO | unknown | Evaluation result. (enum: good, breach, unknown) |
 
 ## Engine Details
 
@@ -56,5 +56,5 @@ Foreign keys:
 ## Views
 | View | Engine | Flags | File |
 | --- | --- | --- | --- |
-| vw_slo_status | mysql | algorithm=MERGE, security=INVOKER | [schema\040_views.mysql.sql](schema\040_views.mysql.sql) |
-| vw_slo_status | postgres |  | [schema\040_views.postgres.sql](schema\040_views.postgres.sql) |
+| vw_slo_status | mysql | algorithm=MERGE, security=INVOKER | [../schema/040_views.mysql.sql](../schema/040_views.mysql.sql) |
+| vw_slo_status | postgres |  | [../schema/040_views.postgres.sql](../schema/040_views.postgres.sql) |
