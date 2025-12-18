@@ -1,0 +1,29 @@
+{
+  "tables": {
+    "slo_status": {
+      "columns": {
+        "computed_at": {
+          "strategy": "passthrough"
+        },
+        "good_events": {
+          "strategy": "passthrough"
+        },
+        "id": {
+          "strategy": "passthrough"
+        },
+        "sli_value": {
+          "strategy": "passthrough"
+        },
+        "status": {
+          "strategy": "passthrough"
+        },
+        "total_events": {
+          "strategy": "passthrough"
+        },
+        "window_id": {
+          "strategy": "passthrough"
+        }
+      }
+    }
+  }
+}
