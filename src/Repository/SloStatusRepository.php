@@ -252,6 +252,7 @@ use OrderByTools, PkTools, RepositoryHelpers;
           ));
           if (!$rows) { return 0; }
 
+          /** @var list<string> $updCols */
           $updCols = [ 'sli_value', 'good_events', 'total_events', 'status' ];
           if ($updCols && $soft && !in_array($soft, $updCols, true)) { $updCols[] = $soft; }
 
